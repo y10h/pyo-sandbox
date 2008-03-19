@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="summary">
+  <h1>It worked!</h1>
+  <h2>Congratulations on your first Django-powered page.</h2>
+</div>
+
+<div id="instructions">
+  <p>Of course, you haven't actually done any work yet. Here's what to do next:</p>
+    <ul>
+      <li>If you plan to use a database, edit the <code>DATABASE_*</code> 
+          settings in <code>${package}_settings.py</code>.</li>
+      <li>Change urlconf in <code>${package}/urls.py</code>.</li>
+      <li>Write your own views and/or models.</li>
+    </ul>
+</div>
+
+<div id="explanation">
+  <p>
+  This message is a placeholder of index page. Change urlconf <code>${package}/urls.py</code> or templates
+  <code>${package}/templates/base.html</code>, <code>${package}/templates/${package}/index.html</code> 
+  to put your custom page on this place.
+  </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>Self-code</h1>
+<p>Here the code, running this site:</p>
+{% for file in file_list %}
+    <hr />
+    <pre><code class="python">
+## contents of {{ file.name }}
+{{ file.contents|escape }}
+    </code></pre>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+<nevow:invisible xmlns:nevow="http://nevow.com/ns/nevow/0.1">
+<h1>Selfcode</h1>
+<p>Here the code, running this site:</p>
+    <nevow:invisible nevow:data="pyfiles" nevow:render="sequence">
+        <nevow:invisible nevow:pattern="item" nevow:render="mapping">
+<hr />
+<pre><code class="python">
+##<nevow:slot name="name" />
+<nevow:slot name="contents" />
+</code></pre>
+        </nevow:invisible>
+    </nevow:invisible>
+</nevow:invisible>

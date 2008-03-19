@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+"""
+Runner script for lister
+"""
+from pkg_resources import require
+require('lister')
+
+from lister import main
+
+main()

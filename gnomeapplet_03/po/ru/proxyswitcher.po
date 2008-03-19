@@ -1,0 +1,36 @@
+# LANG tranlsation for Proxy switcher GNOME applet.
+# Copyright (C) 2006 Yury Yurevich
+# Pythy <the.pythy@gmail.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ProxySwitcher 0.1\n"
+"POT-Creation-Date: 2006-11-26 16:30+OMST\n"
+"PO-Revision-Date: 2006-11-26 16:34+OMST\n"
+"Last-Translator: Pythy <the.pythy@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: proxyswitcher.py:76
+msgid "Proxy is on"
+msgstr "Прокси включен"
+
+#: proxyswitcher.py:77
+msgid "Proxy is off"
+msgstr "Прокси выключен"
+
+#: proxyswitcher.py:78
+msgid "mode: %s"
+msgstr "Режим: %s"
+
+#: proxyswitcher.py:100
+msgid "Proxy switcher"
+msgstr "Переключатель прокси"
+
+#: proxyswitcher.py:101
+msgid "Applet for turning proxy on/off"
+msgstr "Апплет для включения/выключения прокси"
+

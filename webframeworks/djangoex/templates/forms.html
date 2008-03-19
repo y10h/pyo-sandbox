@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>Simple form</h1>
+
+{% if form.has_error %}
+<h2>Please, correct following error<h2>
+{% else %}
+    {% if name %}
+    <p>Welcome to Django world, {{ name }}!</p>
+    {% endif %}
+{% endif %}    
+    <p>
+    <form method="post" action="." >
+    <p>
+    <label for="id_name">Name:</label> {{ form.name }}
+    {% if form.name.errors %}*** {{ form.name.errors|join:", "}}{% endif %}
+    </p>
+    <input type="submit" />
+    </form>
+    </p>
+{% endblock %}

@@ -1,0 +1,22 @@
+from django.conf.urls.defaults import *
+
+from django.views import static
+from django.views.generic import simple
+
+import ${package}.views
+import ${package}.models
+
+import os
+
+document_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+
+urlpatterns = patterns('',
+    url(r'^$$', 
+        simple.direct_to_template, 
+        {'template': '${package}/index.html'}, 
+        'root'),
+    url(r'^static/(?P<path>.*)$$', 
+        static.serve, 
+        {'document_root': document_root}, 
+        'static'),
+)

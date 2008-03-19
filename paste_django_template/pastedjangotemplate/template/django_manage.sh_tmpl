@@ -1,0 +1,2 @@
+#!/bin/sh
+DJANGO_SETTINGS_MODULE='${package}_settings' django-admin.py $$@

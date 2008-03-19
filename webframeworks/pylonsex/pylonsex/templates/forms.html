@@ -1,0 +1,19 @@
+<h1>Simple form</h1>
+% if c.form_errors:
+<h2>Please, correct following error</h2>
+% else:
+%    if c.name:
+<p>Welcome to Pylons world, <% c.name %>!</p>
+% #end if
+% #end if
+<p>
+<% h.form('.', method='post') %>
+<p>
+<label>Name:</label> <% h.text_field('name') %>
+% if c.form_errors:
+*** <% c.form_errors['name']%>
+% #end if
+</p>
+<% h.submit() %>
+<% h.end_form() %>
+</p>

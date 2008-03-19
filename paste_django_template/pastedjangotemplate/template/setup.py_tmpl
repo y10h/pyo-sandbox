@@ -1,0 +1,21 @@
+try:
+    from setuptools import setup, find_packages
+except ImportError:
+    from ez_setup import use_setuptools
+    use_setuptools()
+    from setuptools import setup, find_packages
+
+setup(
+    name=${repr(project)|empty},
+    version=${repr(version)|empty},
+    ${"description='" + description + "'"|"#description=''"},
+    ${"author='" + author + "'"|"#author=''"},
+    ${"author_email='" + author_email + "'"|"#author_email=''"},
+    #url='',
+    #install_requires=["Django>=0.96"],
+    packages=find_packages(exclude=['ez_setup']),
+    include_package_data=True,
+    package_data={'${package}': ['templates/*.html', 'templates/${package}/*.html', 'static/css/*.css']},
+    entry_points="""
+    """,
+)

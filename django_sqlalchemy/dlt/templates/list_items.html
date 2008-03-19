@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<small>
+{% if is_sqlalchemy %}
+    <a href="{% url downloader.views.list_items %}">Использовать Django ORM</a> 
+{% else %}
+    <a href="{% url downloader.views_sa.list_items %}">Использовать SQLAlchemy ORM</a> 
+{% endif %}
+</small>
+
+{% regroup items by is_finished as grouped %}
+{% for group in grouped %}
+
+<h1>{{ group.grouper|yesno:"Завершены,В очереди" }}</h1>
+<ul>
+{% for item in group.list %}
+<li>
+<a href="{{ item.url }}">{{ item }}</a> --
+
+{% if item.is_finished %}
+	завершен {{ item.finished_at }}
+{% else %}
+	{% if item.is_started %}
+		начат {{ item.started_at }}
+	{% else %}
+		добавлен {{ item.added_at }}
+	{% endif %}
+{% endif %}
+
+</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+<a href="{% url downloader.views.create_item %}">Добавить</a>
+
+{% endblock %}

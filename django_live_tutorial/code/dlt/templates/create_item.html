@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.has_errors %}
+Ошибка!
+{% endif %}
+
+<form action='.' method='post'>
+
+	<label for="id_url">Адрес</label>
+	{{ form.url }}
+	{% if form.url.errors %}*** {{ form.url.errors|join:", " }} {% endif %}
+	
+
+	<input type="submit" value="Создать" />
+
+</form>
+
+{% endblock %}

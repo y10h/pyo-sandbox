@@ -1,0 +1,9 @@
+<h1>Self-code</h1>
+<p>Here the code, running this site:</p>
+% for file in c.file_list:
+<hr />
+<pre><code class="python">
+<%'##%s' % file['name'] %>
+<% file['contents'] %>
+</code></pre>
+% #end for

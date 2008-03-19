@@ -1,0 +1,17 @@
+pre code .comment{
+	color:#666666;
+}
+
+pre code .keyword {
+	font-weight: bold;
+}
+
+pre code .class,
+pre code .function {
+	color:#BECF96;
+	font-weight: bold;
+}
+
+pre code .string  {
+	color:#D9FF76;
+}

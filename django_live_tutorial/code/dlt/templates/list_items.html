@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% regroup items by is_finished as grouped %}
+{% for group in grouped %}
+
+<h1>{{ group.grouper|yesno:"Завершены,В очереди" }}</h1>
+<ul>
+{% for item in group.list %}
+<li>
+<a href="{{ item.url }}">{{ item }}</a> --
+
+{% if item.is_finished %}
+	завершен {{ item.finished_at }}
+{% else %}
+	{% if item.is_started %}
+		начат {{ item.started_at }}
+	{% else %}
+		добавлен {{ item.added_at }}
+	{% endif %}
+{% endif %}
+
+</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+<a href="{% url downloader.views.create_item %}">Добавить</a>
+
+{% endblock %}
