@@ -61,6 +61,10 @@ def iter_changes_from_single_repo(repository, changelog_length):
 def get_changes(collection_path, changelog_length=10):
     """
     Return a list of changes for repositories collection
+    
+    Each item is a tuple ('repo_name', changelog_dict)
+    where changelog_dict is a dict with keys: 'author', 'comment',
+    'rev', 'changeset', 'timestamp'
     """
     iface = ui.ui(quiet=True, interactive=False)    
     changes = []
