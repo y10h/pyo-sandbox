@@ -48,8 +48,15 @@ def iter_changes_from_single_repo(repository, changelog_length):
         rev = maxrev - i - 1
         changeset = changelog.read(changelog.node(rev))
         manifest, author, (ts, tz), files, comment, extra = changeset
+        # TODO: correctly process time zone
         dt = datetime.datetime.fromtimestamp(ts)
-        yield {'author': author, 'comment': comment, 'rev': rev, 'changeset': node.hex(manifest), 'timestamp':dt}
+        yield {
+            'author': author, 
+            'comment': comment, 
+            'rev': rev, 
+            'changeset': node.hex(manifest), 
+            'timestamp': dt,
+        }
 
 def get_changes(collection_path, changelog_length=10):
     """
@@ -61,7 +68,9 @@ def get_changes(collection_path, changelog_length=10):
         repo_dir = os.path.join(collection_path, name)
         if os.path.isdir(repo_dir):
             try:
-                curr_repo = localrepo.localrepository(iface, repo_dir)
+                curr_repo = localrepo.localrepository(
+                    iface, 
+                    repo_dir)
             except repo.RepoError:
                 # dir is not a hg repo
                 continue
@@ -70,7 +79,9 @@ def get_changes(collection_path, changelog_length=10):
             changes += zip(itertools.cycle([name]), 
                             iter_changes_from_single_repo(curr_repo, 
                                                          changelog_length))
-    return sorted(changes, key=lambda x: x[1]['timestamp'], reverse=True)[:changelog_length]
+    return sorted(
+            changes, key=lambda x: x[1]['timestamp'], reverse=True
+        )[:changelog_length]
 
 if __name__ == '__main__':
     import sys, pprint
