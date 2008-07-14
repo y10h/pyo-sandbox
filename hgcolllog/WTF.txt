@@ -1,0 +1,3 @@
+Piece of code for getting changelog for hg repos collection.
+
+There is no blog post on this code.
