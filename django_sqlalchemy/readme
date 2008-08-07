@@ -1,0 +1,2 @@
+An attempt to use both Django ORM and SQLAlchemy in Django app,
+see http://www.pyobject.ru/blog/post/django-and-sqlalchemy for details.
