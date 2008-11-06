@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 """
 Monkey patch for hgext.keyword
-for showing tiprev keyword
+for showing tiprev keyword.
+
+This extensions MUST be BEFORE hgext.keyword in hgrc
 """
 
 import hgext.keyword
