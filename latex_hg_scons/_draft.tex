@@ -1,0 +1,13 @@
+%% _draft.tex -- файл-обертка для черновика
+\documentclass[a4paper]{article}
+
+\include{defs}  % вставляем содержимое служебных инструкций из defs.tex
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{}
+\lhead{}
+\rfoot{\scriptsize{Черновик}}   % в нижнем колонтитуле слева "Черновик"
+\begin{document}
+
+\include{article}   % вставляем содержимое статьи
+\end{document}

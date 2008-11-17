@@ -1,0 +1,20 @@
+%% final.tex -- файл-обертка для конечного варианта
+\documentclass[12pt,a4paper]{article}
+
+\include{defs}  % вставляем содержимое служебных инструкций из defs.tex
+
+\textwidth=165mm
+\textheight=240mm
+\oddsidemargin=3mm
+\evensidemargin=3mm
+\topmargin=0cm
+\headheight=0mm
+\headsep=0mm
+
+\renewcommand{\baselinestretch}{1.2}    % интерлиньяж
+\frenchspacing
+
+\begin{document}
+
+\include{article}   % вставляем содержимое статьи
+\end{document}

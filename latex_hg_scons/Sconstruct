@@ -1,0 +1,17 @@
+DEFAULT_TARGET = '_draft.dvi'
+DRAFT = '_draft'
+FINAL = 'final'
+
+env = Environment()
+env.Alias('draft', DRAFT+'.dvi')
+env.Alias('final', FINAL+'.dvi')
+
+common_texs = ['defs.tex', 'article.tex']
+
+draft_dvi = env.DVI(DRAFT+'.dvi', DRAFT+'.tex')
+Depends(draft_dvi, common_texs)
+
+final_dvi = env.DVI(FINAL+'.dvi', FINAL+'.tex')
+Depends(final_dvi, common_texs)
+
+Default(DEFAULT_TARGET)
