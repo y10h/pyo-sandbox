@@ -1,0 +1,6 @@
+A tool for migrating from one rdbms to another.
+It is useful to move data from sqlite to postgresql/mysql
+
+Dependecies: SQLAlchemy (tested on 0.4.x versions)
+
+See http://pyobject.ru/blog/post/whats-happened/ for details
