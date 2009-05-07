@@ -1,0 +1,11 @@
+saex -- SQLAlchemy example
+
+simple bootstrap for SQLAlchemy interactive examples
+
+requires:
+ * SQLAlchemy 0.4.x
+ * IPython
+
+
+there is not blog post on this code yet
+
