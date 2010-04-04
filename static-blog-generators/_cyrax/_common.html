@@ -1,0 +1,15 @@
+
+{% macro render_post(post) %}
+<div class="post">
+<h5 class="postDate"><abbr class="published">{{ post.date.strftime('%Y, %B %d') }}</abbr></h5>
+<div class="postContent">
+    <h3 class="entry-title">
+    <a href="{{ post.get_absolute_url() }}">{{ post.title }}</a></h3>
+    {%- if post.tags %}
+    <div class="tags">{% for tag in post.tags %}{% if not loop.first %}, {% endif %}
+    <a href="{{ site.tag_cache.get(tag).get_absolute_url() }}">#{{ tag }}</a>{% endfor %}</div>
+    {%- endif %}
+    <div class="entry-content">{{ post.body }}</div>
+</div>
+</div>
+{% endmacro %}

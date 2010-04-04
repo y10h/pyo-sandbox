@@ -1,0 +1,16 @@
+---
+layout: master
+---
+
+<div class="post">
+<h5 class="postDate"><abbr class="published">{{ page.date|date_to_string }}</abbr></h5>
+<div class="postContent">
+    <h3 class="entry-title">
+    <a href="{{site.url }}/{{ page.url }}">{{ page.title|escape }}</a></h3>
+    {% if page.categories %}
+    <div class="tags">{% for category in post.categories %}#{{ category }} {% endfor %}</div>
+    {% endif %}
+    <div class="entry-content">{{ content }}</div>
+</div>
+</div>
+

@@ -1,0 +1,23 @@
+template: self
+status: hidden
+
+{% extends "default.html" %}
+{% block content %}
+
+{% for article in articles %}
+
+<div class="post">
+<h5 class="postDate"><abbr class="published">{{ article.headers.date|datetimeformat("%B %e, %Y") }}</abbr></h5>
+<div class="postContent">
+    <h3 class="entry-title">
+    <a href="{{ article.headers.url }}">{{ article.headers.title }}</a></h3>
+    {%- if article.headers.tags is defined %}
+    <div class="tags">{% for tag in article.headers.tags %}{% if not loop.first %}, {% endif %}#{{ tag }}{% endfor %}</div>
+    {%- endif %}
+    <div class="entry-content">{{ article.body }}</div>
+</div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

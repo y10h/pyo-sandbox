@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+{% import "_common.html" as common %}
+
+{% block content -%}
+  {% for post in site.posts[:10] -%}
+    {{- common.render_post(post) -}}
+  {%- endfor %}
+
+
+<div class="archives">
+<h3>Archive</h3>
+<ul>
+{% for post in site.posts %}
+<li><a href="{{ post.get_absolute_url() }}">{{ post.date.strftime('%Y-%m-%d') }} | {{ post.title }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+{%- endblock %}

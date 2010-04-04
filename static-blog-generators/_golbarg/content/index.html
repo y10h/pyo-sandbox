@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "common.html" as common %}
+
+{% block content -%}
+  {% for post in posts[-10:]|reverse -%}
+    {{- common.render_post(post) -}}
+  {%- endfor %}
+
+
+<div class="archive">
+Archive: 
+{%- for year, months in archive|dictsort(by='key')|reverse %}
+<strong><a href="/archive/{{ year }}">{{ year }}</a></strong>
+{% endfor %}
+</div>
+
+
+{%- endblock %}

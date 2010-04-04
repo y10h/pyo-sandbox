@@ -1,0 +1,14 @@
+{% extends "default.html" %}
+{% block content %}
+<div class="post">
+<h5 class="postDate"><abbr class="published">{{ headers.date|datetimeformat("%B %e, %Y") }}</abbr></h5>
+<div class="postContent">
+    <h3 class="entry-title">
+    <a href="{{ headers.url }}">{{ headers.title }}</a></h3>
+    {%- if headers.tags is defined %}
+    <div class="tags">{% for tag in headers.tags %}{% if not loop.first %}, {% endif %}#{{ tag }}{% endfor %}</div>
+    {%- endif %}
+    <div class="entry-content">{{ body }}</div>
+</div>
+</div>
+{% endblock %}

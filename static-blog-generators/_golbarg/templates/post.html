@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "common.html" as common %}
+
+{% block title %}{{ super() }} - {{ post.title }}{% endblock %}
+
+{% block content -%}
+
+{{- common.render_post(post) -}}
+
+<div class="navigation">
+  {%- if prev_post is defined %}
+  <span class="prev"><a href="{{ prev_post.absolute_url }}">&laquo; {{ prev_post.title }}</a></span>
+  {%- endif %}
+  {%- if next_post is defined %}
+  <span class="next"><a href="{{ next_post.absolute_url }}">{{ next_post.title }} &raquo;</a></span>
+  {%- endif %}
+</div>
+
+{%- endblock %}
